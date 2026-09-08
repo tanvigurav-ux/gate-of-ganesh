@@ -20,10 +20,6 @@ export function InvitationMessage() {
           <CornerFlourish className="absolute bottom-5 right-5 h-10 w-10 rotate-180 sm:bottom-7 sm:right-7" />
 
           <div className="relative">
-            <h2 className="font-display text-3xl leading-snug sm:text-4xl">
-              With the blessings of Lord Ganesha
-            </h2>
-            <Ornament tone="deep" className="mx-auto my-7" />
             <p className="mx-auto max-w-lg text-base leading-relaxed opacity-80 sm:text-lg">
               With immense joy and devotion, we invite you and your family to join us as we welcome
               our beloved Lord Ganesha into our home.
