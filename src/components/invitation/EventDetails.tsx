@@ -52,7 +52,7 @@ export function EventDetails() {
                 <p className="mt-6 text-[0.65rem] uppercase tracking-[0.4em] text-gold/80">
                   {card.label}
                 </p>
-                <p className="mt-3 font-display text-2xl text-ivory">{card.value}</p>
+                <p className="mt-3 whitespace-pre-line font-display text-2xl text-ivory">{card.value}</p>
               </article>
             </Reveal>
           ))}
