@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import envelopeTexture from "@/assets/envelope-floral-texture.jpeg.asset.json";
 import { StampSeal } from "./StampSeal";
 import { Ornament, CornerFlourish } from "./Ornament";
 
@@ -117,13 +118,23 @@ export function OpeningEnvelope({ onOpened }: { onOpened: () => void }) {
 function EnvelopeFace({ side }: { side: "left" | "right" }) {
   return (
     <div className="absolute inset-0">
-      {/* paper grain */}
+      {/* embossed floral paper texture, continued across both gates */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 opacity-[0.5]"
+        className="absolute inset-0 opacity-80 mix-blend-multiply"
         style={{
-          backgroundImage:
-            "repeating-linear-gradient(120deg, oklch(0.62 0.115 78 / 0.05) 0 2px, transparent 2px 5px), radial-gradient(circle at 30% 20%, oklch(1 0 0 / 0.7), transparent 60%)",
+          backgroundImage: `url(${envelopeTexture.url})`,
+          backgroundPosition: side === "left" ? "left center" : "right center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "200% 100%",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-30"
+        style={{
+          background:
+            "radial-gradient(circle at 30% 20%, oklch(1 0 0 / 0.75), transparent 62%)",
         }}
       />
       {/* flap diagonal */}
