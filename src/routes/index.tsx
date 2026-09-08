@@ -1,24 +1,56 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useCallback, useState } from "react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { OpeningEnvelope } from "@/components/invitation/OpeningEnvelope";
+import { HeroSection } from "@/components/invitation/HeroSection";
+import { InvitationMessage } from "@/components/invitation/InvitationMessage";
+import { EventDetails } from "@/components/invitation/EventDetails";
+import { PujaSchedule } from "@/components/invitation/PujaSchedule";
+import { BappaSection } from "@/components/invitation/BappaSection";
+import { LocationSection } from "@/components/invitation/LocationSection";
+import { GallerySection } from "@/components/invitation/GallerySection";
+import { RSVPSection } from "@/components/invitation/RSVPSection";
+import { FinalBlessing } from "@/components/invitation/FinalBlessing";
+
+const title = "Ganpati Invitation | Ganpati Bappa Morya";
+const description =
+  "A sealed invitation to our Ganpati celebration — open the sacred seal to see the sthapana details, aarti schedule and venue.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const [opened, setOpened] = useState(false);
+  const handleOpened = useCallback(() => setOpened(true), []);
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <OpeningEnvelope onOpened={handleOpened} />
+      <main
+        aria-hidden={!opened}
+        className={`transition-opacity duration-1000 ${opened ? "opacity-100" : "opacity-0"}`}
+      >
+        <HeroSection />
+        <InvitationMessage />
+        <EventDetails />
+        <PujaSchedule />
+        <BappaSection />
+        <LocationSection />
+        <GallerySection />
+        <RSVPSection />
+        <FinalBlessing />
+      </main>
+    </>
   );
 }
