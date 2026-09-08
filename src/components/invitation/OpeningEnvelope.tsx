@@ -95,9 +95,6 @@ export function OpeningEnvelope({ onOpened }: { onOpened: () => void }) {
           ॥ श्री गणेशाय नमः ॥
         </p>
         <Ornament tone="deep" />
-        <p className="font-display text-base italic tracking-[0.18em] sm:text-lg">
-          With the blessings of Lord Ganesha
-        </p>
 
         <div className="pointer-events-auto my-2">
           <StampSeal
