@@ -14,7 +14,8 @@ export const invitation = {
 
   event: {
     title: "Ganpati Sthapana",
-    date: "[DATE]",
+    date: `॥ वक्रतुंड महाकाय सूर्यकोटि समप्रभ ।
+निर्विघ्नं कुरु मे देव शुभकार्येषु सर्वदा ॥`,
     time: "[TIME]",
     venue: "[VENUE]",
   },
