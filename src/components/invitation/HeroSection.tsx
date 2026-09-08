@@ -10,14 +10,14 @@ export function HeroSection() {
         alt="Decorated Ganesha idol surrounded by marigold garlands and glowing lamps"
         width={1536}
         height={1024}
-        className="absolute inset-0 h-full w-full object-cover opacity-40"
+        className="absolute inset-0 h-full w-full object-cover opacity-60"
       />
       <div
         aria-hidden="true"
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 45%, oklch(0.79 0.13 85 / 0.22), transparent 60%), linear-gradient(180deg, oklch(0.16 0.06 312 / 0.82), oklch(0.19 0.075 315 / 0.94))",
+            "radial-gradient(ellipse at 50% 45%, oklch(0.79 0.13 85 / 0.22), transparent 60%), linear-gradient(180deg, oklch(0.16 0.06 312 / 0.7), oklch(0.19 0.075 315 / 0.9))",
         }}
       />
       <Petals />
